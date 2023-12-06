@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Nav_Capstone</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_list">Daftar</string>
+    <string name="title_scan">Scan</string>
+    <string name="title_favorite">Favorit</string>
+    <string name="title_profile">Profil</string>
+
+    <!--    Welcome-->
+    <string name="welcomeGreeting">Selamat Datang!</string>
+    <string name="welcomeDesc">Siap-siap buat jalan-jalan ke dunia aroma dan rasa yang luar biasa. Di sini, kita bakal bongkar semua rahasia rempah dari penjuru Indonesia!</string>
+    <string name="register">Daftar</string>
+    <string name="login">Masuk</string>
+
+    <!--    Register-->
+    <string name="regisDesc">Buat akunmu untuk dapat bergabung dengan kami!</string>
+    <string name="name">Nama</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="inputName">Masukkan nama</string>
+    <string name="inputEmail">Masukkan email</string>
+    <string name="inputPassword">Masukkan password</string>
+    <string name="regisAsk">Sudah punya akun?</string>
+
+    <!--    Login-->
+    <string name="loginDesc">Kamu hampir sampai! Masuk dan nikmati ekspedisi rempah mu bersama kami!</string>
+    <string name="loginAsk">Belum punya akun?</string>
+
+    <!--    Home-->
+    <string name="homeGreeting">Hai, Petualang Rempah!</string>
+    <string name="homeDesc">Yuk jelajahi rempah lokal Indonesia disini</string>
+    <string name="tahukahKamu">TAHUKAH KAMU?</string>
+    <string name="randomInfo">Dalam beberapa budaya, rempah-rempah sering digunakan sebagai simbol kekayaan, kesejahteraan, dan kelimpahan dalam tradisi pernikahan dan upacara lainnya</string>
+    <string name="rekomendasiRempah">Rekomendasi rempah untukmu</string>
+    <string name="kamusRempah">Kamus Rempah</string>
+    <string name="artikelRempah">Artikel terkait</string>
+    <string name="selengkapnya">Selengkapnya</string>
+
+    <!--    List-->
+    <string name="titleListPage">Daftar Rempah</string>
+    <string name="hintSearch">Cari rempah</string>
+
+    <!--    Favorite-->
+    <string name="titleFavoritePage">Rempah Favoritmu</string>
+
+    <!--    Profile-->
+    <string name="titleProfilePage">Profilku</string>
+    <string name="nameProfile">Rakha Labib</string>
+    <string name="emailProfile">rakhalabib@gmail.com</string>
+    <string name="darkMode">Dark Mode</string>
+    <string name="logout">Keluar</string>
+
+    <!--    Resep-->
+    <string name="titleResepPage">Resep terkait</string>
+    <string name="bahan">Bahan</string>
+    <string name="caraBuat">Cara membuat</string>
+
+    <!--    Artikel-->
+    <string name="titleArtikelPage">Artikel Rempah</string>
+    <string name="title_activity_nav">NavActivity</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+
+</resources>
