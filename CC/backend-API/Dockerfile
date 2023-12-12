@@ -17,6 +17,6 @@ COPY . .
 EXPOSE 3000
 
 # Perintah yang akan dijalankan saat kontainer dijalankan
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
 
 # CMD ["node", "server.js"] 
