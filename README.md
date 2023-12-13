@@ -1,4 +1,4 @@
-![](Media/Logo/green_logo.png)
+![](Media/Logo/logo_for_github.png)
 
 # RempaHustle - Spice Classification App
 ## Team ID: CH2-PS139
