@@ -1,4 +1,4 @@
-![](Media/Logo/green_logo.png)
+<img src="Media/Logo/green_logo.png" alt="Green Logo" width="200" height="200">
 
 # RempaHustle - Spice Classification App
 ## Team ID: CH2-PS139
