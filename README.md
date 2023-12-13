@@ -1,13 +1,17 @@
+![](Media/green_logo.png)
+
 # RempaHustle - Spice Classification App
 ## Team ID: CH2-PS139
 **Team Member :**
-- Rizky Aditya (ML) - Universitas Potensi Utama
-- Dany Eka Saputra (ML) - Universitas Teknokrat Indonesia
-- Mochamad Nurul Taukid (ML) - Universitas Pembangunan Nasional Veteran Jawa Timur
-- Albert Oktamara (CC) - Universitas Mulia
-- Cherillya Rahmita Nurul Nucha (CC) - UIN Sunan Kalijaga Yogyakarta
-- Carissa Renatasari (MD) - Universitas Pembangunan Nasional Veteran Jawa Timur
-- Rakha Widiyatna Labib (MD) - Universitas Bina Sarana Informatika
+| Name                            | Bangkit-ID    | Path               | University                                           |
+| -------------                   | ------------- | -------------      | -------------                                        |
+| Rizky Aditya                    | M304BSY0050   | Machine Learning   | Universitas Potensi Utama                            |
+| Dany Eka Saputra                | M471BSY0122   | Machine Learning   | Universitas Teknokrat Indonesia                      |
+| Mochamad Nurul Taukid           | M296BSY0825   | Machine Learning   | Universitas Pembangunan Nasional Veteran Jawa Timur  |
+| Carissa Renatasari              | A296BSX2550   | Mobile Development | Universitas Pembangunan Nasional Veteran Jawa Timur  |
+| Rakha Widiyatna Labib           | A193BSY2472   | Mobile Development | Universitas Bina Sarana Informatika                  |
+| Albert Oktamara                 | C270BSY3070   | Cloud Computing    | Universitas Mulia                                    |
+| Cherillya Rahmita Nurul Nucha   | C548BKX4446   | Cloud Computing    | UIN Sunan Kalijaga Yogyakarta                        |
 
 ## Project Overview
 RempaHustle is a mobile application designed to educate and engage users in the world of spices. The app features a spice scanner,
