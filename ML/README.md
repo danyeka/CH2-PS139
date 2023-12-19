@@ -7,32 +7,34 @@ Transfer learning is a popular technique in deep learning, where a pre-trained m
 ## Dataset
 We collect images of Indonesian spices and non-spices using web scraping with the bing_image_downloader library, searching on various free platforms, and manually taking photos of the spices. After collecting the data, we prepare the data by cleaning the images that we found not suitable for our model, such as deleting and cropping images that can still be used.
 
-We have 25 classes in total:
-    1. adas
-    2. andaliman
-    3. asam_jawa
-    4. biji_ketumbar
-    5. bunga_lawang
-    6. cengkeh
-    7. daun_ketumbar
-    8. daun_salam
-    9. jahe
-    10. jinten
-    11. kapulaga
-    12. kayu_manis
-    13. kayu_secang
-    14. kemiri
-    15. kemukus
-    16. kencur
-    17. kluwek
-    18. kunyit
-    19. lada
-    20. lengkuas
-    21. pala
-    22. saffron
-    23. serai
-    24. vanili
-    25. wijen
+Kita memiliki total 25 kelas:
+
+1. adas
+2. andaliman
+3. asam_jawa
+4. biji_ketumbar
+5. bunga_lawang
+6. cengkeh
+7. daun_ketumbar
+8. daun_salam
+9. jahe
+10. jinten
+11. kapulaga
+12. kayu_manis
+13. kayu_secang
+14. kemiri
+15. kemukus
+16. kencur
+17. kluwek
+18. kunyit
+19. lada
+20. lengkuas
+21. pala
+22. saffron
+23. serai
+24. vanili
+25. wijen
+
 
 
 ### Link to dataset
