@@ -7,13 +7,14 @@ Transfer learning is a popular technique in deep learning, where a pre-trained m
 ## Dataset
 We collect images of Indonesian spices and non-spices using web scraping with the bing_image_downloader library, searching on various free platforms, and manually taking photos of the spices. After collecting the data, we prepare the data by cleaning the images that we found not suitable for our model, such as deleting and cropping images that can still be used.
 ### Link to dataset
-- [DATASET RempaHustle](../Spices_Classification_update/)
+- [DATASET RempaHustle](../Spices_Clasification_update/)
 
 ## Preprocessing Data
 We use image augmentation by applying various transformations to the original images to creates additional training samples with different variations. Image augmentation is useful to expanding the training data with diverse variations and to reduce overfitting.
 
 ## Create Models
 For Mmodel architecture, resize image into 224x224 and we use transfer learning use MobileNetV3. In general, the Architecture of MobileNetV3:
+
 ![MobileNetV3](graph/model_architecture.png)
 
 ## Evaluate and Test the model
@@ -21,6 +22,7 @@ RempaHustle model Accuracy and Loss
 - ![RempaHuslte model Accuracy and Loss](graph/loss_and_accuracy.png)
 
 This is the result after we test the images to classify the spice using the model we created before:
+
 RempaHustle model test Accuracy
 - ![RempaHustle model test Accuracy](graph/test_accuracy.png)
 
