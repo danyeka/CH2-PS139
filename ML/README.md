@@ -48,7 +48,7 @@ For Mmodel architecture, resize image into 224x224 and we use transfer learning 
 
 ## Evaluate and Test the model
 This is ipnyb Our model, train, evaluate dan test:
-! [Train and test](classification_spice.ipynb)
+- [Train and test](classification_spice.ipynb)
 
 RempaHustle model Accuracy and Loss
 - ![RempaHuslte model Accuracy and Loss](graph/loss_and_accuracy.png)
