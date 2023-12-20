@@ -7,7 +7,7 @@ Transfer learning is a popular technique in deep learning, where a pre-trained m
 ## Dataset
 We collect images of Indonesian spices and non-spices using web scraping with the bing_image_downloader library, searching on various free platforms, and manually taking photos of the spices. After collecting the data, we prepare the data by cleaning the images that we found not suitable for our model, such as deleting and cropping images that can still be used.
 
-We have the total of 25 labels:
+We have a total of 25 classes:
 
 1. adas
 2. andaliman
@@ -52,13 +52,16 @@ For Mmodel architecture, resize image into 224x224 and we use transfer learning 
 This is ipnyb Our model, train, evaluate dan test:
 - [Train and test](classification_spice.ipynb)
 
-RempaHustle model Accuracy and Loss
-- ![RempaHuslte model Accuracy and Loss](graph/loss_and_accuracy.png)
+RempaHustle model Loss and Accuracy
+- ![RempaHuslte model Loss and Accuracy](graph/loss_and_accuracy.png)
 
 This is the result after we test the images to classify the spice using the model we created before:
 
 RempaHustle model test Accuracy
 - ![RempaHustle model test Accuracy](graph/test_accuracy.png)
+
+RempaHustle f1 score
+- ![RempaHustle f1 score](graph/f1score.png)
 
 ## Disclaimer
 -   This project is created for educational purpose as the requirement to graduate from [**_Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka_**.](https://www.linkedin.com/company/bangkit-academy/mycompany/)
