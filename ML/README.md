@@ -58,7 +58,7 @@ RempaHustle model Loss and Accuracy
 This is the result after we test the images to classify the spice using the model we created before:
 
 RempaHustle model test Accuracy
-- ![RempaHustle model test Accuracy](graph/test_accuracy.png)
+- ![RempaHustle model test Accuracy](graph/test-accuracy.png)
 
 RempaHustle f1 score
 - ![RempaHustle f1 score](graph/f1score.png)
