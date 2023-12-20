@@ -7,7 +7,7 @@ Transfer learning is a popular technique in deep learning, where a pre-trained m
 ## Dataset
 We collect images of Indonesian spices and non-spices using web scraping with the bing_image_downloader library, searching on various free platforms, and manually taking photos of the spices. After collecting the data, we prepare the data by cleaning the images that we found not suitable for our model, such as deleting and cropping images that can still be used.
 
-Kita memiliki total 25 kelas:
+We have the total of 25 labels:
 
 1. adas
 2. andaliman
