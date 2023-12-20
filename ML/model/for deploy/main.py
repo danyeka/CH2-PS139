@@ -86,14 +86,14 @@ def index():
                     "nama_rempah": rempah_data.nama_rempah,
                     "nama_latin": rempah_data.nama_latin,
                     "deskripsi": rempah_data.deskripsi,
-                    # "kandungan": rempah_data.kandungan,
-                    # "manfaat": rempah_data.manfaat,
-                    # "cara_penyimpanan": rempah_data.cara_penyimpanan,
-                    # "masakan": rempah_data.masakan,
-                    # "pengobatan_tradisional": rempah_data.pengobatan_tradisional,
-                    # "minuman": rempah_data.minuman,
-                    # "daerah_penghasil": rempah_data.daerah_penghasil,
-                    # "resep_terkait": rempah_data.resep_terkait
+                    "kandungan": rempah_data.kandungan,
+                    "manfaat": rempah_data.manfaat,
+                    "cara_penyimpanan": rempah_data.cara_penyimpanan,
+                    "masakan": rempah_data.masakan,
+                    "pengobatan_tradisional": rempah_data.pengobatan_tradisional,
+                    "minuman": rempah_data.minuman,
+                    "daerah_penghasil": rempah_data.daerah_penghasil,
+                    "resep_terkait": rempah_data.resep_terkait
                 }
             }
         else:
