@@ -5,7 +5,7 @@ from io import BytesIO
 from flask import Flask, request, jsonify
 from keras.models import load_model
 import numpy as np
-from tensorflow.keras.applications.mobilenet import preprocess_input
+from tensorflow.keras.applications.mobilenet_v3 import preprocess_input
 from flask_sqlalchemy import SQLAlchemy
 
 # app = Flask(__name__)
@@ -54,20 +54,20 @@ def index():
 
         img = tf.keras.utils.load_img(img_path, target_size=(224, 224))
         x = tf.keras.utils.img_to_array(img)
-        x = np.expand_dims(x, axis=0)
+        x = np.expand_dims(x, axis=0).astype(np.float32)
         x = preprocess_input(x)
         images = np.vstack([x])
 
         # Model predict
         pred_spices = model.predict(images)
         # Find the max prediction of the image
-        max_prediction = pred_spices.max()
+        max_prediction = np.argmax(pred_spices)
 
         # Print or log prediction information
         print(f"Max Prediction: {max_prediction}")
 
         # Check if the max prediction is above a certain threshold
-        threshold = 0.3
+        threshold = 0.2
         if max_prediction <= threshold:
             respond = jsonify({'message': 'Rempah Tidak Terdeteksi'})
             respond.status_code = 400
@@ -82,15 +82,18 @@ def index():
             result = {
                 "label": rempah_data.nama_rempah,
                 "data": {
+                    "id_rempah": rempah_data.id_rempah,
+                    "nama_rempah": rempah_data.nama_rempah,
+                    "nama_latin": rempah_data.nama_latin,
                     "deskripsi": rempah_data.deskripsi,
-                    "kandungan": rempah_data.kandungan,
-                    "manfaat": rempah_data.manfaat,
-                    "cara_penyimpanan": rempah_data.cara_penyimpanan,
-                    "masakan": rempah_data.masakan,
-                    "pengobatan_tradisional": rempah_data.pengobatan_tradisional,
-                    "minuman": rempah_data.minuman,
-                    "daerah_penghasil": rempah_data.daerah_penghasil,
-                    "resep_terkait": rempah_data.resep_terkait
+                    # "kandungan": rempah_data.kandungan,
+                    # "manfaat": rempah_data.manfaat,
+                    # "cara_penyimpanan": rempah_data.cara_penyimpanan,
+                    # "masakan": rempah_data.masakan,
+                    # "pengobatan_tradisional": rempah_data.pengobatan_tradisional,
+                    # "minuman": rempah_data.minuman,
+                    # "daerah_penghasil": rempah_data.daerah_penghasil,
+                    # "resep_terkait": rempah_data.resep_terkait
                 }
             }
         else:
