@@ -35,8 +35,8 @@ Cloud Computing team responsible to make and provide several API code in accorda
 
 **Service in GCP :**
 - Cloud Run = for deployment 
-  - Service for API Model ML = using [flask](https://github.com/danyeka/CH2-PS139/tree/master/CC/backend-API)
-  - Service for Backend API = using nodejs and expressjs
+  - Service for [API Model ML](https://github.com/danyeka/CH2-PS139/tree/master/CC/API-ML) = using flask
+  - Service for [Backend API](https://github.com/danyeka/CH2-PS139/tree/master/CC/backend-API) = using nodejs and expressjs
 - Cloud Storage = store image
 - Cloud SQL = database 
 
@@ -52,6 +52,7 @@ Cloud Computing team responsible to make and provide several API code in accorda
     ```
 4. After run command above, will be prompted several number of region and you have to choose. In this project im using 'asia-southeast2' number 9
 5. Then, will prompted some question and just type 'Y'
+6. If there's no error, new service will appear in your cloud run page
 
 <br>
 
