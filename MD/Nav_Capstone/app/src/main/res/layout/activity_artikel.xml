@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.ArtikelActivity">
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.artikel.ArtikelActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/backButton"
@@ -26,7 +40,6 @@
         android:paddingVertical="20dp"
         android:fontFamily="@font/montserrat_bold"
         android:text="@string/titleArtikelPage"
-        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/backButton"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -36,7 +49,8 @@
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:scaleType="centerCrop"
-        app:layout_constraintTop_toBottomOf="@id/judulPage"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/sumberArtikel"
         tools:src="@tools:sample/avatars" />
 
     <TextView
@@ -47,28 +61,43 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/montserrat_bold"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/ivArtikel"
+        app:layout_constraintTop_toBottomOf="@+id/judulPage"
         tools:text="8 Cara Menyimpan Rempah agar Awet, Rasa dan Kualitasnya Terjaga" />
 
     <TextView
-        android:id="@+id/tanggalArtikel"
-        android:layout_width="match_parent"
+        android:id="@+id/tvSumberArtikel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="@string/sumber"
+        android:layout_marginTop="4dp"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@+id/judulArtikel"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/sumberArtikel"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:fontFamily="@font/montserrat_light"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="6dp"
         android:textSize="10sp"
         app:layout_constraintTop_toBottomOf="@+id/judulArtikel"
-        tools:text="Rabu, 5 September 2022" />
+        app:layout_constraintStart_toEndOf="@+id/tvSumberArtikel"
+        tools:text="liputan6.com" />
 
     <TextView
-        android:id="@+id/bahanResep"
+        android:id="@+id/kontenArtikel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="@font/montserrat_light"
-        android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@+id/tanggalArtikel"
+        android:fontFamily="@font/montserrat"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@+id/ivArtikel"
         tools:text="Jakarta - Bumbu rempah memiliki cita rasa yang sangat kaya dan sudah terbukti mampu membuat masakan menjadi sangat nikmat. Tak heran, banyak orang yang menyimpan bumbu rempah agar bisa digunakan sewaktu-waktu jika dibutuhkan.\n\n
         Menyimpan rempah memang terlihat mudah. Namun, kamu perlu penanganan tersendiri agar rasa dan kualitasnya tetap terjaga. Beda jenis bumbu rempah, beda juga cara menyimpannya. Oleh karena itu, penting untuk mengetahui cara menyimpan rempah agar awet tahan lama.\n\n
         Apabila salah simpan atau tercampur, maka aroma bumbu akan tercampur dengan yang lainnya. Hal ini akan membuat cita rasa khas dari rempah tersebut menghilang. Untuk itu, agar bumbu rempah awet dan bertahan lebih lama, penting untuk menyimpannya dengan benar.\n\n
@@ -83,3 +112,4 @@
         - Menggantung Rempah Jenis Daun" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

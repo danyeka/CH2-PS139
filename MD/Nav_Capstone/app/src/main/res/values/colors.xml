@@ -13,7 +13,11 @@
     <color name="activityBackground">#FFFFFF</color>
     <color name="grey">#CCCCCC</color>
     <color name="grey1">#999999</color>
+    <color name="grey2">#F3F3F3</color>
     <color name="blue">#14ADEE</color>
+
+    <color name="lightCardBackground">#F3F3F3</color>
+    <color name="darkCardBackground">#222222</color>
 
     <color name="icon_normal">#999999</color>
     <color name="icon_selected">#5DB075</color>

@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:layout_marginBottom="8dp"
-    app:cardBackgroundColor="#F3F3F3"
+    android:layout_marginBottom="10dp"
+    style="@style/CardViewStyle"
     app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:fontFamily="@font/montserrat_light_italic"
+            android:fontFamily="@font/montserrat_italic"
             android:textSize="10sp"
             app:layout_constraintStart_toEndOf="@+id/ivRempah"
             app:layout_constraintTop_toBottomOf="@id/tvNamaRempah"

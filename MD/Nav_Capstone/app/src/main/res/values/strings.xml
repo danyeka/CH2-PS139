@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Nav_Capstone</string>
+    <string name="app_name">RempaHustle</string>
     <string name="title_home">Beranda</string>
-    <string name="title_list">Daftar</string>
+    <string name="title_list">Kamus</string>
     <string name="title_scan">Scan</string>
     <string name="title_favorite">Favorit</string>
     <string name="title_profile">Profil</string>
@@ -31,35 +31,83 @@
     <string name="homeDesc">Yuk jelajahi rempah lokal Indonesia disini</string>
     <string name="tahukahKamu">TAHUKAH KAMU?</string>
     <string name="randomInfo">Dalam beberapa budaya, rempah-rempah sering digunakan sebagai simbol kekayaan, kesejahteraan, dan kelimpahan dalam tradisi pernikahan dan upacara lainnya</string>
-    <string name="rekomendasiRempah">Rekomendasi rempah untukmu</string>
+    <string name="rekomendasiRempah">Mungkin ini yang kamu cari</string>
     <string name="kamusRempah">Kamus Rempah</string>
     <string name="artikelRempah">Artikel terkait</string>
     <string name="selengkapnya">Selengkapnya</string>
 
     <!--    List-->
-    <string name="titleListPage">Daftar Rempah</string>
+    <string name="titleListPage">Kamus Rempah</string>
     <string name="hintSearch">Cari rempah</string>
 
     <!--    Favorite-->
     <string name="titleFavoritePage">Rempah Favoritmu</string>
 
     <!--    Profile-->
-    <string name="titleProfilePage">Profilku</string>
+    <string name="titleProfilePage">Profil</string>
+    <string name="username">Username</string>
+    <string name="emailUser">email@gmail.com</string>
     <string name="nameProfile">Rakha Labib</string>
     <string name="emailProfile">rakhalabib@gmail.com</string>
     <string name="darkMode">Dark Mode</string>
     <string name="logout">Keluar</string>
 
+    <!-- Night Mode Preferences -->
+    <string name="titleSettingPage">Setting</string>
+    <string name="pref_dark_title">Dark mode</string>
+    <string name="pref_key_dark" translatable="false">key_dark_mode</string>
+    <string name="pref_dark_follow_system" translatable="false">follow_system</string>
+    <string name="pref_dark_on" translatable="false">on</string>
+    <string name="pref_dark_off" translatable="false">off</string>
+    <string name="dark_mode_auto">Automatic</string>
+    <string name="dark_mode_on">Dark mode</string>
+    <string name="dark_mode_off">Light mode</string>
+
+<!--    Premium-->
+    <string name="subscription">Premium Subscription</string>
+    <string name="titlePremiumPage">Premium Subscription</string>
+    <string name="tvBerlangganan">Berlangganan Premium</string>
+    <string name="descPremium">Nikmati petualangan tak terbatas menjelajahi rempah di RempaHustle dengan berlangganan Premium!</string>
+    <string name="tvUnlimitedScan">Unlimited Scan Rempah</string>
+    <string name="descUnlimited">Kamu dapat scan rempah di sekitarmu tanpa batasan</string>
+    <string name="tvRekomendasiResep">Rekomendasi Resep</string>
+    <string name="descRekomendasiResep">Dapatkan rekomendasi resep yang sesuai dengan rempah yang kamu punya</string>
+    <string name="tvForum">Forum Diskusi</string>
+    <string name="descForum">Bagikan pengalaman, pertanyaan, dan resep buatanmu di forum diskusi khusus member premium</string>
+    <string name="tvIklan">Bebas Iklan</string>
+    <string name="descIklan">Temukan keseruan menjelajah rempah tanpa terhalang iklan</string>
+    <string name="berlangganan">BERLANGGANAN SEKARANG</string>
+
+    <!--    Detail-->
+    <string name="deskripsi">Deskripsi</string>
+    <string name="daerahPenghasil">Daerah Penghasil</string>
+    <string name="kandungan">Kandungan</string>
+    <string name="manfaat">Manfaat</string>
+    <string name="caraPenyimpanan">Cara Penyimpanan</string>
+    <string name="penggunaanUmum">Penggunaan Umum</string>
+    <string name="masakan">Masakan</string>
+    <string name="pengobatanTradisional">Pengobatan Tradisional</string>
+    <string name="minuman">Minuman</string>
+    <string name="resepTerkait">Resep Terkait</string>
+
     <!--    Resep-->
     <string name="titleResepPage">Resep terkait</string>
     <string name="bahan">Bahan</string>
     <string name="caraBuat">Cara membuat</string>
+    <string name="rempahTerkait">Rempah terkait: </string>
 
     <!--    Artikel-->
     <string name="titleArtikelPage">Artikel Rempah</string>
+    <string name="sumber">Sumber: </string>
     <string name="title_activity_nav">NavActivity</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+
+    <!--    Scan-->
+    <string name="titleScan">Scan Rempah</string>
+    <string name="camera_x">CameraX</string>
+    <string name="camera">Kamera</string>
+    <string name="gallery">Galeri</string>
+    <string name="scan">Scan rempah</string>
+    <string name="empty_image_warning">Masukkan berkas gambar terlebih dahulu</string>
 
 
 </resources>
