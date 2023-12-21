@@ -1,46 +1,90 @@
 package com.dicoding.nav_capstone.ui.profile
 
-import androidx.lifecycle.ViewModelProvider
+import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import com.dicoding.nav_capstone.R
-import com.dicoding.nav_capstone.databinding.FragmentListBinding
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import com.dicoding.nav_capstone.data.local.model.SessionModel
+import com.dicoding.nav_capstone.data.local.preferences.SessionPreferences
+import com.dicoding.nav_capstone.data.local.preferences.datastore
 import com.dicoding.nav_capstone.databinding.FragmentProfileBinding
-import com.dicoding.nav_capstone.ui.list.ListViewModel
+import com.dicoding.nav_capstone.ui.ViewModelFactory
+import com.dicoding.nav_capstone.ui.setting.SettingsActivity
+import com.dicoding.nav_capstone.ui.welcome.WelcomeActivity
+import kotlinx.coroutines.flow.Flow
 
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+
+    private val viewModel by viewModels<ProfileViewModel> {
+        ViewModelFactory.getInstance(requireContext())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val profileViewModel =
-            ViewModelProvider(this).get(ProfileViewModel::class.java)
-
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-//        val textView: TextView = binding.textProfile
-//        profileViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
+        val buttonKeluar = binding.buttonKeluar
+        buttonKeluar.setOnClickListener {
+            showLogoutConfirmationDialog()
+        }
+
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.textDarkmode.setOnClickListener {
+            val intent = Intent(requireContext(), SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.textSubscription.setOnClickListener {
+            val intent = Intent(requireContext(), SubscriptionActivity::class.java)
+            startActivity(intent)
+        }
+
+        val sessionPreferences = SessionPreferences.getInstance(requireContext().datastore)
+        val sessionFlow: Flow<SessionModel> = sessionPreferences.getSession()
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            sessionFlow.collect { sessionModel ->
+                if (sessionModel.isLogin) {
+                    binding.textEmailProfile.text = "${sessionModel.email}"
+                }
+
+            }
+        }
+
+    }
+
+    private fun showLogoutConfirmationDialog() {
+        AlertDialog.Builder(requireContext()).apply {
+            setMessage("Apakah kamu yakin ingin keluar?")
+            setPositiveButton("Yakin") { _, _ ->
+                viewModel.logOut()
+                startActivity(Intent(requireContext(), WelcomeActivity::class.java))
+            }
+            setNegativeButton("Batal") { _, _ ->
+                // Do Nothing
+            }
+            create().show()
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
 }

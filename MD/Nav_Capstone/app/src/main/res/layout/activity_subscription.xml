@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.SubscriptionActivity">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginVertical="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@null"
+        android:src="@drawable/ic_back"
+        app:layout_constraintEnd_toStartOf="@+id/judulPage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/judulPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:paddingVertical="20dp"
+        android:text="@string/titlePremiumPage"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/backButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivPremium"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="20dp"
+        android:src="@drawable/doodle"
+        app:layout_constraintBottom_toTopOf="@+id/descPremium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/judulPage"
+        app:layout_constraintVertical_bias="0.273" />
+
+    <TextView
+        android:id="@+id/tvBerlangganan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/tvBerlangganan"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/ivPremium" />
+
+    <TextView
+        android:id="@+id/descPremium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/descPremium"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/tvBerlangganan" />
+
+    <ImageView
+        android:id="@+id/ivUnlimited"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="30dp"
+        android:src="@drawable/ic_premium"
+        app:layout_constraintBottom_toBottomOf="@+id/descUnlimited"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvUnlimitedScan" />
+
+    <TextView
+        android:id="@+id/tvUnlimitedScan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="@string/tvUnlimitedScan"
+        app:layout_constraintStart_toEndOf="@+id/ivUnlimited"
+        app:layout_constraintTop_toBottomOf="@+id/descPremium" />
+
+    <TextView
+        android:id="@+id/descUnlimited"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/descUnlimited"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/ivUnlimited"
+        app:layout_constraintTop_toBottomOf="@id/tvUnlimitedScan" />
+
+    <ImageView
+        android:id="@+id/ivRekomendasi"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="30dp"
+        android:src="@drawable/ic_resep"
+        app:layout_constraintBottom_toBottomOf="@+id/descRekomendasiResep"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvRekomendasiResep" />
+
+    <TextView
+        android:id="@+id/tvRekomendasiResep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="@string/tvRekomendasiResep"
+        app:layout_constraintStart_toEndOf="@+id/ivRekomendasi"
+        app:layout_constraintTop_toBottomOf="@id/descUnlimited" />
+
+    <TextView
+        android:id="@+id/descRekomendasiResep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/descRekomendasiResep"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/ivRekomendasi"
+        app:layout_constraintTop_toBottomOf="@+id/tvRekomendasiResep" />
+
+    <ImageView
+        android:id="@+id/ivForum"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="30dp"
+        android:src="@drawable/ic_forum"
+        app:layout_constraintBottom_toBottomOf="@+id/descForum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvForum" />
+
+    <TextView
+        android:id="@+id/tvForum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="@string/tvForum"
+        app:layout_constraintTop_toBottomOf="@+id/descRekomendasiResep" />
+
+    <TextView
+        android:id="@+id/descForum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/descForum"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvForum" />
+
+    <ImageView
+        android:id="@+id/ivIklan"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="30dp"
+        android:src="@drawable/ic_ads"
+        app:layout_constraintBottom_toBottomOf="@+id/descIklan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvIklan" />
+
+    <TextView
+        android:id="@+id/tvIklan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="@string/tvIklan"
+        app:layout_constraintTop_toBottomOf="@+id/descForum" />
+
+    <TextView
+        android:id="@+id/descIklan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/descIklan"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvIklan" />
+
+    <Button
+        android:id="@+id/langgananButton"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/berlangganan"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

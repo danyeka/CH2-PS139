@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     android:layout_marginHorizontal="20dp">
 
-<!--    <ImageView-->
-<!--        android:id="@+id/backButton"-->
-<!--        android:layout_width="24dp"-->
-<!--        android:layout_height="24dp"-->
-<!--        android:layout_marginVertical="20dp"-->
-<!--        android:background="@null"-->
-<!--        android:src="@drawable/ic_back"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/judulPage"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
-
     <TextView
         android:id="@+id/judulPage"
         android:layout_width="wrap_content"
@@ -24,190 +13,125 @@
         android:fontFamily="@font/montserrat_bold"
         android:paddingVertical="20dp"
         android:text="@string/titleProfilePage"
-        android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/profileImage"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/circle_shape"
         android:clipToOutline="true"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/malaysia"
         android:scaleType="centerCrop"
+        android:src="@drawable/profile_photo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/judulPage"
         tools:targetApi="s" />
 
     <TextView
-        android:id="@+id/textNameProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/nameProfile"
-        android:textColor="@color/black"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/profileImage"
-        app:layout_constraintStart_toStartOf="@+id/profileImage"
-        app:layout_constraintTop_toBottomOf="@+id/profileImage" />
-
-    <TextView
         android:id="@+id/textEmailProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/emailProfile"
-        app:layout_constraintEnd_toEndOf="@+id/textNameProfile"
-        app:layout_constraintStart_toStartOf="@+id/textNameProfile"
-        app:layout_constraintTop_toBottomOf="@+id/textNameProfile" />
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/profileImage"
+        app:layout_constraintStart_toStartOf="@+id/profileImage"
+        app:layout_constraintTop_toBottomOf="@+id/profileImage"
+        tools:text="@string/email" />
 
     <LinearLayout
         android:id="@+id/groupView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/circle_shape"
+        android:layout_marginTop="70dp"
         android:backgroundTint="@color/grey"
+        android:clickable="true"
         android:orientation="horizontal"
-        android:padding="16dp"
+        android:paddingHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textEmailProfile">
 
-        <!-- Icon di kiri -->
         <ImageView
             android:id="@+id/iconImageView1"
             android:layout_width="26dp"
             android:layout_height="26dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_darkmode" />
+            android:src="@drawable/ic_setting" />
 
-        <!-- TextView di tengah -->
         <TextView
             android:id="@+id/textDarkmode"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_weight="1"
+            android:fontFamily="@font/montserrat_bold"
             android:gravity="center_vertical"
+            android:paddingVertical="16dp"
             android:text="@string/darkMode"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textSize="16sp" />
 
-        <!-- Switch di kanan -->
-        <Switch
-            android:id="@+id/switchView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            tools:ignore="UseSwitchCompatOrMaterialXml" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/groupView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/circle_shape"
-        android:orientation="horizontal"
-        android:backgroundTint="@color/grey"
-        android:padding="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/groupView1">
-
-        <!-- Icon di kiri -->
         <ImageView
-            android:id="@+id/iconImageView2"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_gravity="center_vertical"
-            app:tint="@color/primaryColor"
-            android:src="@drawable/ic_home" />
-
-        <!-- TextView di tengah -->
-        <TextView
-            android:id="@+id/textBeranda"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="@string/title_home"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <ImageButton
             android:id="@+id/arrowButton1"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center_vertical"
-            android:background="?android:attr/selectableItemBackground"
             android:src="@drawable/ic_arrow_right" />
-
-        <!-- Switch di kanan -->
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/groupView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/circle_shape"
-        android:backgroundTint="@color/grey"
+        android:clickable="true"
         android:orientation="horizontal"
-        android:padding="16dp"
+        android:paddingHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/groupView2">
+        app:layout_constraintTop_toBottomOf="@+id/groupView1">
 
-        <!-- Icon di kiri -->
         <ImageView
             android:id="@+id/iconImageView3"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
             android:layout_gravity="center_vertical"
-            app:tint="@color/primaryColor"
-            android:src="@drawable/ic_fav_grey" />
+            android:src="@drawable/ic_premium1" />
 
-        <!-- TextView di tengah -->
         <TextView
-            android:id="@+id/textFavorit"
+            android:id="@+id/textSubscription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_weight="1"
+            android:fontFamily="@font/montserrat_bold"
             android:gravity="center_vertical"
-            android:text="@string/title_favorite"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:paddingVertical="16dp"
+            android:text="@string/subscription"
+            android:textColor="@color/primaryColor"
+            android:textSize="16sp" />
 
-        <!-- Switch di kanan -->
-
-        <!-- Tombol panah di paling kanan -->
-        <ImageButton
+        <ImageView
             android:id="@+id/arrowButton2"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="center_vertical"
-            android:background="?android:attr/selectableItemBackground"
-            android:src="@drawable/ic_arrow_right" />
+            android:src="@drawable/ic_arrow_right"
+            app:tint="@color/primaryColor" />
     </LinearLayout>
 
     <Button
         android:id="@+id/buttonKeluar"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="170dp"
+        android:fontFamily="@font/montserrat_bold"
         android:text="@string/logout"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/groupView3"
         app:layout_constraintStart_toStartOf="@+id/groupView3"
         app:layout_constraintTop_toBottomOf="@+id/groupView3" />

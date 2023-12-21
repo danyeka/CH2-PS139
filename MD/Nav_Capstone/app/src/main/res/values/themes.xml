@@ -1,16 +1,21 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.Nav_Capstone" parent="Theme.Material3.DayNight.NoActionBar">
-        <!--        <item name="android:windowBackground">@color/activityBackground</item>-->
+        <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primaryColor</item>
-<!--        <item name="colorPrimaryDark">@color/primaryColor</item>-->
-<!--        <item name="colorAccent">@color/secondaryColor</item>-->
-<!--        <item name="colorPrimaryVariant">@color/primaryColor</item>&ndash;&gt;-->
+        <item name="colorPrimaryVariant">@color/primaryColor</item>
         <item name="colorOnPrimary">@color/white</item>
-<!--        <item name="colorSecondary">@color/primaryColor</item>&ndash;&gt;-->
-<!--        <item name="colorSecondaryVariant">@color/primaryColor</item>-->
-        <item name="colorOnSecondary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/grey</item>
+        <item name="colorSecondaryVariant">@color/grey1</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
 
+    <style name="CardViewStyle" parent="CardView">
+        <item name="cardBackgroundColor">@color/lightCardBackground</item>
     </style>
 
     <style name="BottomNavTextStyleActive" parent="TextAppearance.Material3.TitleSmall">
@@ -18,16 +23,14 @@
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">@color/primaryColor</item>
     </style>
+
     <style name="BottomNavTextStyle" parent="TextAppearance.Material3.TitleSmall">
         <item name="fontFamily">@font/montserrat</item>
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">@color/grey1</item>
     </style>
 
-
     <style name="Theme.MyApp" parent="Theme.Material3.Light">
-
         <item name="strokeColor">@color/black</item>
-
     </style>
 </resources>

@@ -1,9 +1,8 @@
 package com.dicoding.nav_capstone.ui.welcome
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.dicoding.nav_capstone.R
+import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.nav_capstone.databinding.ActivityWelcomeBinding
 
 class WelcomeActivity : AppCompatActivity() {

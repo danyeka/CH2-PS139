@@ -1,13 +1,10 @@
 package com.dicoding.nav_capstone.ui.list
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.dicoding.nav_capstone.data.repository.RempahRepository
 
-class ListViewModel : ViewModel() {
+class ListViewModel(private val rempahRepository: RempahRepository) : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is list Fragment"
-    }
-    val text: LiveData<String> = _text
+    fun getAllRempah() = rempahRepository.getAllRempah(token = String())
+
 }

@@ -1,203 +1,349 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.DetailActivity">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/backButton"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginVertical="20dp"
-        android:layout_marginStart="20dp"
-        android:background="@null"
-        android:src="@drawable/ic_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/judulPage"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/judulPage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:paddingVertical="20dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Detail Rempah"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/backButton"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <ImageView
-        android:id="@+id/background_rectangle"
-        android:layout_width="match_parent"
-        android:layout_height="295dp"
-        android:background="@drawable/shape_rectangle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/judulPage" />
-
-    <ImageView
-        android:id="@+id/foto_rempah"
-        android:layout_width="230dp"
-        android:layout_height="230dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/shape_corner"
-        android:clipToOutline="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/latinTextView"
-        tools:src="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="CENGKEH"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/latinTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/judulPage" />
-
-    <TextView
-        android:id="@+id/latinTextView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_light_italic"
-        android:text="Syzygium aromaticum"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+        tools:context=".ui.detail.DetailActivity">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/background_rectangle"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="@drawable/shape_rectangle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginVertical="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@null"
+            android:src="@drawable/ic_back_white"
+            app:layout_constraintEnd_toStartOf="@+id/judulPage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/judulPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:paddingVertical="20dp"
+            android:text="Detail Rempah"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/backButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/foto_rempah"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_corner"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/latinTextView"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/latinTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/judulPage"
+            tools:text="CENGKEH" />
+
+        <TextView
+            android:id="@+id/latinTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_light_italic"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+            tools:text="Syzygium aromaticum" />
 
 
-    <ImageView
-        android:id="@+id/fav_button"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="175dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/ic_fav_grey"
-        app:layout_constraintStart_toStartOf="@id/foto_rempah"
-        app:layout_constraintTop_toBottomOf="@id/foto_rempah" />
+        <ImageView
+            android:id="@+id/fav_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="175dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_fav_grey"
+            app:layout_constraintStart_toStartOf="@id/foto_rempah"
+            app:layout_constraintTop_toBottomOf="@id/foto_rempah" />
 
-    <ImageView
-        android:id="@+id/share_button"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/ic_share"
-        app:layout_constraintEnd_toEndOf="@id/foto_rempah"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/fav_button"
-        app:layout_constraintTop_toBottomOf="@id/foto_rempah" />
+        <ImageView
+            android:id="@+id/share_button"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_share"
+            app:layout_constraintEnd_toEndOf="@id/foto_rempah"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/fav_button"
+            app:layout_constraintTop_toBottomOf="@id/foto_rempah" />
 
-    <TextView
-        android:id="@+id/descTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Deskripsi"
-        android:textSize="16sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@+id/fav_button" />
+        <TextView
+            android:id="@+id/descTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/deskripsi"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/fav_button" />
 
-    <TextView
-        android:id="@+id/descTv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_light"
-        android:textSize="12sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="Deskripsi rempah"
-        app:layout_constraintTop_toBottomOf="@+id/descTitle"/>
-    <!--        tools:text="Cengkih atau cengkeh adalah kuncup bunga kering beraroma dari keluarga pohon Myrtaceae. Cengkih adalah tanaman asli Indonesia, banyak digunakan sebagai bumbu masakan pedas di negara-negara Eropa, dan sebagai bahan utama rokok kretek khas Indonesia."/>-->
+        <TextView
+            android:id="@+id/descTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@+id/descTitle"
+            tools:text="Deskripsi rempah" />
 
-    <TextView
-        android:id="@+id/kandunganTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Kandungan"
-        android:textSize="16sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/descTv" />
+        <TextView
+            android:id="@+id/daerahTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/daerahPenghasil"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/descTv" />
 
-    <TextView
-        android:id="@+id/kandunganTv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_light"
-        android:textSize="12sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="Kandungan rempah"
-        app:layout_constraintTop_toBottomOf="@+id/kandunganTitle"/>
-    <!--        tools:text="Kandungan utama dalam cengkeh adalah eugenol, yang memberikan aroma dan rasa khas cengkeh. Eugenol juga memiliki sifat antimikroba dan antiinflamasi. Selain eugenol, cengkeh juga mengandung senyawa-senyawa lain seperti acetyleugenol, beta-caryophyllene, dan sebagainya. Kandungan-kandungan ini memberikan cengkeh sifat-sifat seperti rasa pedas, aroma yang khas, dan sifat-sifat obat tertentu."/>-->
+        <TextView
+            android:id="@+id/daerahTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@+id/daerahTitle"
+            tools:text="Daerah Penghasil" />
 
-    <TextView
-        android:id="@+id/manfaatTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Manfaat"
-        android:textSize="16sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/kandunganTv" />
+        <TextView
+            android:id="@+id/kandunganTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/kandungan"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/daerahTv" />
 
-    <TextView
-        android:id="@+id/manfaatTv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_light"
-        android:text="Manfaat rempah"
-        android:textSize="12sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/manfaatTitle"/>
-    <!--        tools:text="Cengkeh telah digunakan dalam berbagai budaya dan industri, termasuk dalam kuliner, obat-obatan, dan minyak aromaterapi. Keberagaman kandungan kimia dalam cengkeh memberikan manfaat yang beragam, termasuk sebagai bumbu, antiseptik, dan pengobatan tradisional."/>-->
+        <TextView
+            android:id="@+id/kandunganTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@+id/kandunganTitle"
+            tools:text="Kandungan rempah" />
+        <!--        tools:text="Kandungan utama dalam cengkeh adalah eugenol, yang memberikan aroma dan rasa khas cengkeh. Eugenol juga memiliki sifat antimikroba dan antiinflamasi. Selain eugenol, cengkeh juga mengandung senyawa-senyawa lain seperti acetyleugenol, beta-caryophyllene, dan sebagainya. Kandungan-kandungan ini memberikan cengkeh sifat-sifat seperti rasa pedas, aroma yang khas, dan sifat-sifat obat tertentu."/>-->
 
-    <TextView
-        android:id="@+id/resepTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat_bold"
-        android:text="Resep terkait"
-        android:textSize="16sp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/manfaatTv" />
+        <TextView
+            android:id="@+id/manfaatTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/manfaat"
+            app:layout_constraintTop_toBottomOf="@+id/kandunganTv" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvResep"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="4dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/resepTitle"
-        tools:listitem="@layout/item_resep"/>
+        <TextView
+            android:id="@+id/manfaatTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@+id/manfaatTitle"
+            tools:text="Manfaat rempah" />
+        <!--        tools:text="Cengkeh telah digunakan dalam berbagai budaya dan industri, termasuk dalam kuliner, obat-obatan, dan minyak aromaterapi. Keberagaman kandungan kimia dalam cengkeh memberikan manfaat yang beragam, termasuk sebagai bumbu, antiseptik, dan pengobatan tradisional."/>-->
+
+        <TextView
+            android:id="@+id/penyimpananTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/caraPenyimpanan"
+            app:layout_constraintTop_toBottomOf="@+id/manfaatTv" />
+
+        <TextView
+            android:id="@+id/penyimpananTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@+id/penyimpananTitle"
+            tools:text="Cara penyimpanan" />
+
+        <TextView
+            android:id="@+id/penggunaanTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/penggunaanUmum"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/penyimpananTv" />
+
+        <TextView
+            android:id="@+id/masakanTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/masakan"
+            app:layout_constraintTop_toBottomOf="@+id/penggunaanTitle" />
+
+        <TextView
+            android:id="@+id/masakanTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@+id/masakanTitle"
+            tools:text="Masakan" />
+
+        <TextView
+            android:id="@+id/pengobatanTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/pengobatanTradisional"
+            app:layout_constraintTop_toBottomOf="@+id/masakanTv" />
+
+        <TextView
+            android:id="@+id/pengobatanTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@+id/pengobatanTitle"
+            tools:text="Pengobatan Tradisional" />
+
+        <TextView
+            android:id="@+id/minumanTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Minuman"
+            app:layout_constraintTop_toBottomOf="@+id/pengobatanTv" />
+
+        <TextView
+            android:id="@+id/minumanTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat"
+            tools:text="@string/minuman"
+            android:textSize="13sp"
+            app:layout_constraintTop_toBottomOf="@+id/minumanTitle" />
+
+        <TextView
+            android:id="@+id/resepTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/resepTerkait"
+            app:layout_constraintTop_toBottomOf="@+id/minumanTv" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvResep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:paddingBottom="14dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resepTitle"
+            tools:listitem="@layout/item_resep" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
