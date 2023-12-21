@@ -1,0 +1,12 @@
+Flask
+gunicorn
+google-cloud-storage
+pillow
+numpy
+tensorflow
+keras
+Flask-SQLAlchemy
+pymysql 
+mysqlclient
+scipy
+mysql-connector-python
