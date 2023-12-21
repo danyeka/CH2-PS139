@@ -1,16 +1,11 @@
 package com.dicoding.nav_capstone.ui.home
 
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -19,11 +14,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.nav_capstone.R
 import com.dicoding.nav_capstone.data.repository.ResultState
 import com.dicoding.nav_capstone.databinding.FragmentHomeBinding
+import com.dicoding.nav_capstone.ui.ViewModelFactory
 import com.dicoding.nav_capstone.ui.artikel.ArtikelActivity
 import com.dicoding.nav_capstone.ui.detail.DetailActivity
-import com.dicoding.nav_capstone.ui.ViewModelFactory
 
-class HomeFragment : Fragment(), RekomendasiAdapter.OnItemClickListener, KamusAdapter.OnItemClickListener,
+class HomeFragment : Fragment(), RekomendasiAdapter.OnItemClickListener,
+    KamusAdapter.OnItemClickListener,
     ArtikelAdapter.OnItemClickListener {
 
     private var _binding: FragmentHomeBinding? = null
@@ -50,16 +46,8 @@ class HomeFragment : Fragment(), RekomendasiAdapter.OnItemClickListener, KamusAd
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        with(binding) {
-            searchView.setupWithSearchBar(searchBar)
-            searchView
-                .editText
-                .setOnEditorActionListener { textView, actionId, event ->
-//                    searchBar.text = searchView.text
-                    searchView.hide()
-                    Toast.makeText(requireContext(), searchView.text, Toast.LENGTH_SHORT).show()
-                    false
-                }
+        binding.searchBar.setOnClickListener {
+            Toast.makeText(requireContext(), "Fitur ini belum tersedia", Toast.LENGTH_SHORT).show()
         }
 
         setupRecyclerView()
@@ -67,23 +55,10 @@ class HomeFragment : Fragment(), RekomendasiAdapter.OnItemClickListener, KamusAd
 
     }
 
-    private fun startSlideAnimation(view: View) {
-        val slideOut = ObjectAnimator.ofFloat(view, "translationX", 0f, -view.width.toFloat())
-        slideOut.interpolator = AccelerateDecelerateInterpolator()
-        slideOut.duration = 500 // Ganti angka ini dengan durasi animasi yang diinginkan (dalam milidetik)
-
-        val slideIn = ObjectAnimator.ofFloat(view, "translationX", view.width.toFloat(), 0f)
-        slideIn.interpolator = AccelerateDecelerateInterpolator()
-        slideIn.duration = 500 // Ganti angka ini dengan durasi animasi yang diinginkan (dalam milidetik)
-
-        val animatorSet = AnimatorSet()
-        animatorSet.playSequentially(slideOut, slideIn)
-        animatorSet.start()
-    }
-
     private fun setupRecyclerView() {
         rekomendasiAdapter = RekomendasiAdapter(this)
-        binding.rvRekomendasi.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        binding.rvRekomendasi.layoutManager =
+            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.rvRekomendasi.adapter = rekomendasiAdapter
 
         kamusAdapter = KamusAdapter(this)
@@ -102,9 +77,9 @@ class HomeFragment : Fragment(), RekomendasiAdapter.OnItemClickListener, KamusAd
         viewModel.getHomeData().observe(viewLifecycleOwner, Observer { listStory ->
             when (listStory) {
                 is ResultState.Loading -> {
-                    // Tambahkan logika untuk menangani kondisi loading
                     binding.progressBar.visibility = View.VISIBLE
                 }
+
                 is ResultState.Success -> {
                     binding.progressBar.visibility = View.GONE
                     val randomInfo = listStory.data.randomInfo
@@ -123,8 +98,8 @@ class HomeFragment : Fragment(), RekomendasiAdapter.OnItemClickListener, KamusAd
                     artikelAdapter.submitList(story2)
 
                 }
+
                 is ResultState.Error -> {
-                    // Tambahkan logika untuk menangani kondisi error
                     Log.d("ListFragment", "Error fetching rempah list: ${listStory.error}")
                 }
             }
@@ -136,22 +111,17 @@ class HomeFragment : Fragment(), RekomendasiAdapter.OnItemClickListener, KamusAd
             "artikel" -> {
                 val intent = Intent(requireContext(), ArtikelActivity::class.java)
                 intent.putExtra("extra_id", id)
-                // You can pass additional data if needed
                 startActivity(intent)
             }
+
             "rempah" -> {
                 val intent = Intent(requireContext(), DetailActivity::class.java)
                 intent.putExtra("extra_id", id)
-                // You can pass additional data if needed
                 startActivity(intent)
             }
-            else -> {
-                // Handle other types if needed
-            }
+
+            else -> {}
         }
-//        val intent = Intent(requireContext(), DetailActivity::class.java)
-//        intent.putExtra("extra_id", id)
-//        startActivity(intent)
     }
 
     override fun onDestroyView() {

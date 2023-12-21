@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.nav_capstone.R
 import com.dicoding.nav_capstone.databinding.FragmentFavoriteBinding
 import com.dicoding.nav_capstone.ui.detail.DetailActivity
-import com.dicoding.nav_capstone.ui.list.ListRempahAdapter
 
 class FavoriteFragment : Fragment(), FavoriteAdapter.OnItemClickListener {
 
@@ -20,7 +19,7 @@ class FavoriteFragment : Fragment(), FavoriteAdapter.OnItemClickListener {
     private val binding get() = _binding!!
     private lateinit var adapter: FavoriteAdapter
 
-    private val favoriteViewModel by viewModels<FavoriteViewModel>(){
+    private val favoriteViewModel by viewModels<FavoriteViewModel>() {
         FavViewModelFactory.getInstance(requireContext())
     }
 
@@ -58,11 +57,9 @@ class FavoriteFragment : Fragment(), FavoriteAdapter.OnItemClickListener {
     private fun observeFavList() {
         favoriteViewModel.getFavorite().observe(viewLifecycleOwner) { favUser ->
             if (favUser.isEmpty()) {
-                // Daftar favorit kosong, tampilkan pesan
                 binding.rvFavRempah.visibility = View.GONE
                 binding.emptyFavMessageLayout.visibility = View.VISIBLE
             } else {
-                // Daftar favorit tidak kosong, tampilkan RecyclerView
                 binding.rvFavRempah.visibility = View.VISIBLE
                 binding.emptyFavMessageLayout.visibility = View.GONE
                 adapter.submitList(favUser)

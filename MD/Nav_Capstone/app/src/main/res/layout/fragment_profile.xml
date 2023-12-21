@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     android:layout_marginHorizontal="20dp">
 
-    <!--    <ImageView-->
-    <!--        android:id="@+id/backButton"-->
-    <!--        android:layout_width="24dp"-->
-    <!--        android:layout_height="24dp"-->
-    <!--        android:layout_marginVertical="20dp"-->
-    <!--        android:background="@null"-->
-    <!--        android:src="@drawable/ic_back"-->
-    <!--        app:layout_constraintEnd_toStartOf="@+id/judulPage"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
-
     <TextView
         android:id="@+id/judulPage"
         android:layout_width="wrap_content"
@@ -32,11 +21,11 @@
         android:id="@+id/profileImage"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/circle_shape"
         android:clipToOutline="true"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/profile_photo"
         android:scaleType="centerCrop"
+        android:src="@drawable/profile_photo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/judulPage"
@@ -47,36 +36,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        tools:text="@string/email"
         android:fontFamily="@font/montserrat_medium"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/profileImage"
         app:layout_constraintStart_toStartOf="@+id/profileImage"
-        app:layout_constraintTop_toBottomOf="@+id/profileImage" />
-
-<!--    <TextView-->
-<!--        android:id="@+id/textEmailProfile"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/email"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/textNameProfile"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/textNameProfile"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textNameProfile" />-->
+        app:layout_constraintTop_toBottomOf="@+id/profileImage"
+        tools:text="@string/email" />
 
     <LinearLayout
         android:id="@+id/groupView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:clickable="true"
-        android:paddingHorizontal="16dp"
         android:backgroundTint="@color/grey"
+        android:clickable="true"
         android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textEmailProfile">
 
-        <!-- Icon di kiri -->
         <ImageView
             android:id="@+id/iconImageView1"
             android:layout_width="26dp"
@@ -84,18 +63,17 @@
             android:layout_gravity="center_vertical"
             android:src="@drawable/ic_setting" />
 
-        <!-- TextView di tengah -->
         <TextView
             android:id="@+id/textDarkmode"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_weight="1"
+            android:fontFamily="@font/montserrat_bold"
             android:gravity="center_vertical"
-            android:text="@string/darkMode"
             android:paddingVertical="16dp"
-            android:textSize="16sp"
-            android:fontFamily="@font/montserrat_bold"/>
+            android:text="@string/darkMode"
+            android:textSize="16sp" />
 
         <ImageView
             android:id="@+id/arrowButton1"
@@ -103,72 +81,19 @@
             android:layout_height="24dp"
             android:layout_gravity="center_vertical"
             android:src="@drawable/ic_arrow_right" />
-
-<!--        &lt;!&ndash; Switch di kanan &ndash;&gt;-->
-<!--        <Switch-->
-<!--            android:id="@+id/switchView"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_vertical"-->
-<!--            tools:ignore="UseSwitchCompatOrMaterialXml" />-->
     </LinearLayout>
-
-<!--    <LinearLayout-->
-<!--        android:id="@+id/groupView2"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:padding="16dp"-->
-<!--        android:clickable="true"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/groupView1">-->
-
-<!--        &lt;!&ndash; Icon di kiri &ndash;&gt;-->
-<!--        <ImageView-->
-<!--            android:id="@+id/iconImageView2"-->
-<!--            android:layout_width="24dp"-->
-<!--            android:layout_height="24dp"-->
-<!--            android:layout_gravity="center_vertical"-->
-<!--            app:tint="@color/primaryColor"-->
-<!--            android:src="@drawable/ic_home" />-->
-
-<!--        &lt;!&ndash; TextView di tengah &ndash;&gt;-->
-<!--        <TextView-->
-<!--            android:id="@+id/textBeranda"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="16dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:gravity="center_vertical"-->
-<!--            android:text="@string/title_home"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="16sp"-->
-<!--            android:textStyle="bold" />-->
-
-<!--        <ImageButton-->
-<!--            android:id="@+id/arrowButton1"-->
-<!--            android:layout_width="24dp"-->
-<!--            android:layout_height="24dp"-->
-<!--            android:layout_gravity="center_vertical"-->
-<!--            android:background="?android:attr/selectableItemBackground"-->
-<!--            android:src="@drawable/ic_arrow_right" />-->
-
-<!--        &lt;!&ndash; Switch di kanan &ndash;&gt;-->
-<!--    </LinearLayout>-->
 
     <LinearLayout
         android:id="@+id/groupView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:clickable="true"
+        android:orientation="horizontal"
         android:paddingHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/groupView1">
 
-        <!-- Icon di kiri -->
         <ImageView
             android:id="@+id/iconImageView3"
             android:layout_width="26dp"
@@ -176,23 +101,19 @@
             android:layout_gravity="center_vertical"
             android:src="@drawable/ic_premium1" />
 
-        <!-- TextView di tengah -->
         <TextView
             android:id="@+id/textSubscription"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_weight="1"
-            android:paddingVertical="16dp"
+            android:fontFamily="@font/montserrat_bold"
             android:gravity="center_vertical"
+            android:paddingVertical="16dp"
             android:text="@string/subscription"
             android:textColor="@color/primaryColor"
-            android:textSize="16sp"
-            android:fontFamily="@font/montserrat_bold"/>
+            android:textSize="16sp" />
 
-        <!-- Switch di kanan -->
-
-        <!-- Tombol panah di paling kanan -->
         <ImageView
             android:id="@+id/arrowButton2"
             android:layout_width="24dp"
@@ -207,8 +128,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="170dp"
-        android:text="@string/logout"
         android:fontFamily="@font/montserrat_bold"
+        android:text="@string/logout"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/groupView3"

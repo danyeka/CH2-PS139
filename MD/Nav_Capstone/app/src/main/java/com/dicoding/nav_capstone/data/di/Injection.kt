@@ -16,6 +16,7 @@ object Injection {
         val sessionPreferences = SessionPreferences.getInstance(context.datastore)
         return RempahRepository.getInstance(apiService, sessionPreferences)
     }
+
     fun provideFavRepository(context: Context): FavoriteRepository {
         val database = FavRoomDatabase.getDatabase(context)
         val dao = database.favoriteDao()

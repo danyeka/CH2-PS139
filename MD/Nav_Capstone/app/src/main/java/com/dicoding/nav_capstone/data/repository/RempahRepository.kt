@@ -1,12 +1,10 @@
 package com.dicoding.nav_capstone.data.repository
 
-import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.dicoding.nav_capstone.data.local.model.SessionModel
 import com.dicoding.nav_capstone.data.local.preferences.SessionPreferences
-import com.dicoding.nav_capstone.data.remote.response.AllRempahResponse
 import com.dicoding.nav_capstone.data.remote.response.ErrorResponse
 import com.dicoding.nav_capstone.data.remote.response.LoginResponse
 import com.dicoding.nav_capstone.data.remote.response.ScanResponse
@@ -16,7 +14,6 @@ import kotlinx.coroutines.flow.Flow
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.HttpException
 import java.io.File
 
@@ -38,7 +35,6 @@ class RempahRepository constructor(
             }.also { instance = it }
     }
 
-    // RempahRepository
     fun register(name: String, email: String, password: String) = liveData {
         emit(ResultState.Loading)
         try {
@@ -77,10 +73,8 @@ class RempahRepository constructor(
 
     suspend fun logOut() {
         try {
-            // Call the appropriate sessionPreferences function for logout
             sessionPreferences.logOut()
         } catch (e: Exception) {
-            // Handle any exceptions that may occur during logout
             Log.e("RempahRepository", "Error during logout", e)
         }
     }

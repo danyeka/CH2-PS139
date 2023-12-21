@@ -7,13 +7,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.nav_capstone.data.remote.response.ArticleListItem
-import com.dicoding.nav_capstone.data.remote.response.RecommendedRempahItem
 import com.dicoding.nav_capstone.databinding.ItemArtikelBinding
-import com.dicoding.nav_capstone.databinding.ItemRempahBinding
 
-class ArtikelAdapter (
+class ArtikelAdapter(
     private val itemClicklistener: OnItemClickListener
-): ListAdapter<ArticleListItem, ArtikelAdapter.MyViewHolder>(DIFF_CALLBACK) {
+) : ListAdapter<ArticleListItem, ArtikelAdapter.MyViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding = ItemArtikelBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -34,7 +32,12 @@ class ArtikelAdapter (
                     .load(artikel.image)
                     .into(ivArtikel)
                 root.setOnClickListener {
-                    artikel.idArtikel.let { it1 -> itemClicklistener.onStoryClicked(it1.toString(), "artikel") }
+                    artikel.idArtikel.let { it1 ->
+                        itemClicklistener.onStoryClicked(
+                            it1.toString(),
+                            "artikel"
+                        )
+                    }
                 }
             }
         }

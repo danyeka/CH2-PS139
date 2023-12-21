@@ -9,12 +9,13 @@ import com.bumptech.glide.Glide
 import com.dicoding.nav_capstone.data.remote.response.ListRempahItem
 import com.dicoding.nav_capstone.databinding.ItemListRempahBinding
 
-class ListRempahAdapter (
+class ListRempahAdapter(
     private val itemClicklistener: OnItemClickListener
-    ): ListAdapter<ListRempahItem, ListRempahAdapter.MyViewHolder>(DIFF_CALLBACK) {
+) : ListAdapter<ListRempahItem, ListRempahAdapter.MyViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val binding = ItemListRempahBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemListRempahBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MyViewHolder(binding)
     }
 
@@ -46,7 +47,10 @@ class ListRempahAdapter (
 
     companion object {
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<ListRempahItem>() {
-            override fun areItemsTheSame(oldItem: ListRempahItem, newItem: ListRempahItem): Boolean {
+            override fun areItemsTheSame(
+                oldItem: ListRempahItem,
+                newItem: ListRempahItem
+            ): Boolean {
                 return oldItem.idRempah == newItem.idRempah
             }
 

@@ -47,13 +47,13 @@
         android:id="@+id/tvBerlangganan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginHorizontal="20dp"
-        android:text="@string/tvBerlangganan"
-        android:textSize="16dp"
-        android:textAlignment="center"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat_bold"
-        app:layout_constraintTop_toBottomOf="@+id/ivPremium"/>
+        android:text="@string/tvBerlangganan"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/ivPremium" />
 
     <TextView
         android:id="@+id/descPremium"
@@ -61,10 +61,10 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
         android:text="@string/descPremium"
         android:textAlignment="center"
-        android:fontFamily="@font/montserrat"
-        app:layout_constraintTop_toBottomOf="@+id/tvBerlangganan"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvBerlangganan" />
 
     <ImageView
         android:id="@+id/ivUnlimited"
@@ -72,30 +72,32 @@
         android:layout_height="30dp"
         android:layout_marginStart="30dp"
         android:src="@drawable/ic_premium"
+        app:layout_constraintBottom_toBottomOf="@+id/descUnlimited"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvUnlimitedScan"
-        app:layout_constraintBottom_toBottomOf="@+id/descUnlimited"/>
+        app:layout_constraintTop_toTopOf="@+id/tvUnlimitedScan" />
+
     <TextView
         android:id="@+id/tvUnlimitedScan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:layout_marginStart="80dp"
-        android:text="@string/tvUnlimitedScan"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/montserrat_semibold"
+        android:text="@string/tvUnlimitedScan"
         app:layout_constraintStart_toEndOf="@+id/ivUnlimited"
-        app:layout_constraintTop_toBottomOf="@+id/descPremium"/>
+        app:layout_constraintTop_toBottomOf="@+id/descPremium" />
+
     <TextView
         android:id="@+id/descUnlimited"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginEnd="20dp"
+        android:fontFamily="@font/montserrat"
         android:text="@string/descUnlimited"
         android:textSize="12sp"
-        android:fontFamily="@font/montserrat"
         app:layout_constraintStart_toEndOf="@+id/ivUnlimited"
-        app:layout_constraintTop_toBottomOf="@id/tvUnlimitedScan"/>
+        app:layout_constraintTop_toBottomOf="@id/tvUnlimitedScan" />
 
     <ImageView
         android:id="@+id/ivRekomendasi"
@@ -103,30 +105,32 @@
         android:layout_height="30dp"
         android:layout_marginStart="30dp"
         android:src="@drawable/ic_resep"
+        app:layout_constraintBottom_toBottomOf="@+id/descRekomendasiResep"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvRekomendasiResep"
-        app:layout_constraintBottom_toBottomOf="@+id/descRekomendasiResep"/>
+        app:layout_constraintTop_toTopOf="@+id/tvRekomendasiResep" />
+
     <TextView
         android:id="@+id/tvRekomendasiResep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="80dp"
-        android:text="@string/tvRekomendasiResep"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat_semibold"
+        android:text="@string/tvRekomendasiResep"
         app:layout_constraintStart_toEndOf="@+id/ivRekomendasi"
-        app:layout_constraintTop_toBottomOf="@id/descUnlimited"/>
+        app:layout_constraintTop_toBottomOf="@id/descUnlimited" />
+
     <TextView
         android:id="@+id/descRekomendasiResep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginEnd="20dp"
+        android:fontFamily="@font/montserrat"
         android:text="@string/descRekomendasiResep"
         android:textSize="12sp"
-        android:fontFamily="@font/montserrat"
         app:layout_constraintStart_toEndOf="@+id/ivRekomendasi"
-        app:layout_constraintTop_toBottomOf="@+id/tvRekomendasiResep"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvRekomendasiResep" />
 
     <ImageView
         android:id="@+id/ivForum"
@@ -134,28 +138,30 @@
         android:layout_height="30dp"
         android:layout_marginStart="30dp"
         android:src="@drawable/ic_forum"
+        app:layout_constraintBottom_toBottomOf="@+id/descForum"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvForum"
-        app:layout_constraintBottom_toBottomOf="@+id/descForum"/>
+        app:layout_constraintTop_toTopOf="@+id/tvForum" />
+
     <TextView
         android:id="@+id/tvForum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="80dp"
-        android:text="@string/tvForum"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat_semibold"
-        app:layout_constraintTop_toBottomOf="@+id/descRekomendasiResep"/>
+        android:text="@string/tvForum"
+        app:layout_constraintTop_toBottomOf="@+id/descRekomendasiResep" />
+
     <TextView
         android:id="@+id/descForum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginEnd="20dp"
-        android:textSize="12sp"
-        android:text="@string/descForum"
         android:fontFamily="@font/montserrat"
-        app:layout_constraintTop_toBottomOf="@+id/tvForum"/>
+        android:text="@string/descForum"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvForum" />
 
     <ImageView
         android:id="@+id/ivIklan"
@@ -163,38 +169,40 @@
         android:layout_height="30dp"
         android:layout_marginStart="30dp"
         android:src="@drawable/ic_ads"
+        app:layout_constraintBottom_toBottomOf="@+id/descIklan"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvIklan"
-        app:layout_constraintBottom_toBottomOf="@+id/descIklan"/>
+        app:layout_constraintTop_toTopOf="@+id/tvIklan" />
+
     <TextView
         android:id="@+id/tvIklan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:layout_marginStart="80dp"
-        android:text="@string/tvIklan"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat_semibold"
-        app:layout_constraintTop_toBottomOf="@+id/descForum"/>
+        android:text="@string/tvIklan"
+        app:layout_constraintTop_toBottomOf="@+id/descForum" />
+
     <TextView
         android:id="@+id/descIklan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginEnd="20dp"
-        android:textSize="12sp"
-        android:text="@string/descIklan"
         android:fontFamily="@font/montserrat"
-        app:layout_constraintTop_toBottomOf="@+id/tvIklan"/>
+        android:text="@string/descIklan"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@+id/tvIklan" />
 
     <Button
         android:id="@+id/langgananButton"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginHorizontal="20dp"
-        android:text="@string/berlangganan"
-        android:fontFamily="@font/montserrat_bold"
-        android:textSize="12sp"
         android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/berlangganan"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

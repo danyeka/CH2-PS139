@@ -15,22 +15,24 @@ class PasswordEditText : TextInputEditText {
         init()
     }
 
-    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context,
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
+        context,
         attrs,
-        defStyleAttr) {
+        defStyleAttr
+    ) {
         init()
     }
 
-    private fun init(){
+    private fun init() {
         addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
 
             override fun onTextChanged(s: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if(s.toString().length < 8){
-                    setError("Tidak Boleh dibawah 8 karakter",null)
-                }else {
+                if (s.toString().length < 8) {
+                    setError("Tidak Boleh dibawah 8 karakter", null)
+                } else {
                     error = null
                 }
             }

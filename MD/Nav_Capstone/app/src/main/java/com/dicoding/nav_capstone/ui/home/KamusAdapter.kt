@@ -8,14 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.nav_capstone.data.remote.response.DictionaryRempahItem
 import com.dicoding.nav_capstone.databinding.ItemListRempahBinding
-import com.dicoding.nav_capstone.databinding.ItemRempahBinding
 
 class KamusAdapter(
     private val itemClicklistener: OnItemClickListener
-): ListAdapter<DictionaryRempahItem, KamusAdapter.MyViewHolder>(DIFF_CALLBACK) {
+) : ListAdapter<DictionaryRempahItem, KamusAdapter.MyViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val binding = ItemListRempahBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemListRempahBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MyViewHolder(binding)
     }
 
@@ -35,7 +35,12 @@ class KamusAdapter(
                     .load(kamusRempah.image)
                     .into(ivRempah)
                 root.setOnClickListener {
-                    kamusRempah.idRempah.let { it1 -> itemClicklistener.onStoryClicked(it1.toString(), "rempah") }
+                    kamusRempah.idRempah.let { it1 ->
+                        itemClicklistener.onStoryClicked(
+                            it1.toString(),
+                            "rempah"
+                        )
+                    }
                 }
             }
         }
@@ -47,7 +52,10 @@ class KamusAdapter(
 
     companion object {
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<DictionaryRempahItem>() {
-            override fun areItemsTheSame(oldItem: DictionaryRempahItem, newItem: DictionaryRempahItem): Boolean {
+            override fun areItemsTheSame(
+                oldItem: DictionaryRempahItem,
+                newItem: DictionaryRempahItem
+            ): Boolean {
                 return oldItem.idRempah == newItem.idRempah
             }
 

@@ -35,7 +35,6 @@ class ResepActivity : AppCompatActivity() {
         binding.caraResep.setPadding(0, 0, 0, margin)
 
         binding.backButton.setOnClickListener {
-            // Navigate back when the backButton is clicked
             onBackPressed()
         }
 
@@ -48,7 +47,6 @@ class ResepActivity : AppCompatActivity() {
                 when(detailResep){
                     is ResultState.Loading -> {
                         binding.progressBar.visibility = View.VISIBLE
-//                            showLoading(true)
                     }
                     is ResultState.Success -> {
                         binding.progressBar.visibility = View.GONE
@@ -56,25 +54,18 @@ class ResepActivity : AppCompatActivity() {
                         binding.apply {
                             judulResep.text = "${detailResep.data.dataResep.namaResep}"
                             relatedKeyword.text = "${detailResep.data.dataResep.relatedKeyword}"
-                            // Displaying ingredients as a list
+
                             val ingredientsList = detailResep.data.dataResep.ingredients
                             bahanResep.text = ingredientsList.joinToString("\n - ")
 
-                            // Displaying steps as a list
                             val stepsList = detailResep.data.dataResep.steps
                             caraResep.text = stepsList.joinToString("\n - ")
 
-//                            bahanResep.text = "${detailResep.data.dataResep.ingredients}"
-//                            caraResep.text = "${detailResep.data.dataResep.steps}"
                             Glide.with(this@ResepActivity)
                                 .load(rempah.image)
-                                .placeholder(R.drawable.load_gambar) // placeholder gambar sementara
-                                .error(R.drawable.error_gambar) // gambar yang ditampilkan jika terjadi kesalahan
+                                .placeholder(R.drawable.load_gambar)
+                                .error(R.drawable.load_gambar)
                                 .into(binding.ivResep)
-
-//                            val resepRempah = detailRempah.data.dataRempah.resepTerkait
-//                            resepAdapter.submitList(resepRempah)
-
                         }
                     }
                     is ResultState.Error -> {

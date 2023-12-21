@@ -2,11 +2,10 @@ package com.dicoding.nav_capstone.ui.welcome
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import androidx.activity.viewModels
-import com.dicoding.nav_capstone.R
+import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.nav_capstone.databinding.ActivitySplashScreenBinding
 import com.dicoding.nav_capstone.ui.MainActivity
 import com.dicoding.nav_capstone.ui.MainViewModel

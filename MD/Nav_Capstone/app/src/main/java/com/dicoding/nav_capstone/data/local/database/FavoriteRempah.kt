@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "favorite_rempah")
-data class FavoriteRempah (
+data class FavoriteRempah(
     @PrimaryKey
     @ColumnInfo("id_rempah")
     var idRempah: Int,
@@ -17,5 +17,5 @@ data class FavoriteRempah (
     var latin: String? = "",
 
     @ColumnInfo("image")
-    var image : String? = ""
+    var image: String? = ""
 )

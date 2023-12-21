@@ -37,7 +37,6 @@ class RegisterActivity : AppCompatActivity() {
                         is ResultState.Success -> {
                             binding.progressBar.visibility = View.GONE
                             AlertDialog.Builder(this@RegisterActivity).apply {
-//                                setTitle("Register Success!")
                                 setMessage("Register berhasil!")
                                 setPositiveButton("Login") { _, _ ->
                                     val intent = Intent(context, LoginActivity::class.java)
@@ -65,7 +64,6 @@ class RegisterActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
         }
         binding.backButton.setOnClickListener {
-            // Navigate back when the backButton is clicked
             onBackPressed()
         }
     }

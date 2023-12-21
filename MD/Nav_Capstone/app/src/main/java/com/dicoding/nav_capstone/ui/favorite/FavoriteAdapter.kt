@@ -13,19 +13,21 @@ class FavoriteAdapter(
     private val itemClicklistener: OnItemClickListener
 ) : ListAdapter<FavoriteRempah, FavoriteAdapter.MyViewHolder>(DIFF_CALLBACK) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val binding = ItemFavRempahBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemFavRempahBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MyViewHolder(binding)
     }
+
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val favRempah = getItem(position)
         holder.bind(favRempah)
     }
 
-    inner class MyViewHolder(val binding: ItemFavRempahBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(favRempah: FavoriteRempah){
+    inner class MyViewHolder(val binding: ItemFavRempahBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(favRempah: FavoriteRempah) {
             binding.tvNamaRempah.text = "${favRempah.nama}"
             binding.tvLatinRempah.text = "${favRempah.latin}"
-//            binding.tvId.text = "ID ${user.id}"
             Glide.with(itemView)
                 .load(favRempah.image)
                 .into(binding.ivRempah)
@@ -41,11 +43,17 @@ class FavoriteAdapter(
 
     companion object {
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<FavoriteRempah>() {
-            override fun areItemsTheSame(oldItem: FavoriteRempah, newItem: FavoriteRempah): Boolean {
+            override fun areItemsTheSame(
+                oldItem: FavoriteRempah,
+                newItem: FavoriteRempah
+            ): Boolean {
                 return oldItem.idRempah == newItem.idRempah
             }
 
-            override fun areContentsTheSame(oldItem: FavoriteRempah, newItem: FavoriteRempah): Boolean {
+            override fun areContentsTheSame(
+                oldItem: FavoriteRempah,
+                newItem: FavoriteRempah
+            ): Boolean {
                 return oldItem == newItem
             }
 

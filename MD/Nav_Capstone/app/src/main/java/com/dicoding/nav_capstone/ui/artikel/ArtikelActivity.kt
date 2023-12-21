@@ -1,17 +1,14 @@
 package com.dicoding.nav_capstone.ui.artikel
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.dicoding.nav_capstone.R
 import com.dicoding.nav_capstone.data.repository.ResultState
 import com.dicoding.nav_capstone.databinding.ActivityArtikelBinding
-import com.dicoding.nav_capstone.databinding.ActivityDetailBinding
 import com.dicoding.nav_capstone.ui.ViewModelFactory
-import com.dicoding.nav_capstone.ui.detail.DetailActivity
-import com.dicoding.nav_capstone.ui.detail.ResepAdapter
 
 class ArtikelActivity : AppCompatActivity() {
 
@@ -30,7 +27,6 @@ class ArtikelActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.backButton.setOnClickListener {
-            // Navigate back when the backButton is clicked
             onBackPressed()
         }
 
@@ -41,13 +37,13 @@ class ArtikelActivity : AppCompatActivity() {
         val bundle = Bundle()
         bundle.putString(EXTRA_ID, idArtikel)
 
-        if (idArtikel != null){
+        if (idArtikel != null) {
             viewModel.getArtikel(idArtikel).observe(this) { detailRempah ->
-                when(detailRempah){
+                when (detailRempah) {
                     is ResultState.Loading -> {
-//                            showLoading(true)
                         binding.progressBar.visibility = View.VISIBLE
                     }
+
                     is ResultState.Success -> {
                         binding.progressBar.visibility = View.GONE
                         val rempah = detailRempah.data.dataArtikel
@@ -60,6 +56,7 @@ class ArtikelActivity : AppCompatActivity() {
                                 .into(binding.ivArtikel)
                         }
                     }
+
                     else -> {}
                 }
             }

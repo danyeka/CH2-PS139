@@ -4,18 +4,17 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceFragmentCompat
-import androidx.preference.PreferenceManager
 import com.dicoding.nav_capstone.R
-import com.dicoding.nav_capstone.databinding.ActivitySettingBinding // Import the necessary binding
+import com.dicoding.nav_capstone.databinding.ActivitySettingBinding
 
 class SettingsActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivitySettingBinding // Initialize the binding
+    private lateinit var binding: ActivitySettingBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySettingBinding.inflate(layoutInflater) // Inflate the binding
-        setContentView(binding.root) // Set the content view to the root of the binding
+        binding = ActivitySettingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         if (savedInstanceState == null) {
             supportFragmentManager
@@ -25,7 +24,6 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         binding.backButton.setOnClickListener {
-            // Navigate back when the backButton is clicked
             onBackPressed()
         }
     }
@@ -34,7 +32,8 @@ class SettingsActivity : AppCompatActivity() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey)
 
-            val pref = findPreference<androidx.preference.ListPreference>(getString(R.string.pref_key_dark))
+            val pref =
+                findPreference<androidx.preference.ListPreference>(getString(R.string.pref_key_dark))
             pref?.setOnPreferenceChangeListener { _, newValue ->
                 when (newValue) {
                     "off" -> updateTheme(AppCompatDelegate.MODE_NIGHT_NO)

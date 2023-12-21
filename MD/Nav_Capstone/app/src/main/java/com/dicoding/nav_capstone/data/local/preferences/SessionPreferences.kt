@@ -6,7 +6,6 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.intPreferencesKey
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.dicoding.nav_capstone.data.local.model.SessionModel
@@ -53,14 +52,10 @@ class SessionPreferences private constructor(private val dataStore: DataStore<Pr
 
     suspend fun logOut() {
         try {
-            // Clear the specific preferences related to session
             dataStore.edit { session ->
                 session.clear()
-//                session[TOKEN_KEY] = ""
-//                session[IS_LOGIN] = false
             }
         } catch (e: Exception) {
-            // Handle any exceptions that may occur during logout
             Log.e("SessionPreferences", "Error during logout", e)
         }
     }

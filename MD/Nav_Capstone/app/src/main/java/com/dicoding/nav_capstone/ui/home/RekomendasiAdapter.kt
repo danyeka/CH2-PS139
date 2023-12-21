@@ -6,13 +6,12 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.dicoding.nav_capstone.data.remote.response.DictionaryRempahItem
 import com.dicoding.nav_capstone.data.remote.response.RecommendedRempahItem
 import com.dicoding.nav_capstone.databinding.ItemRempahBinding
 
-class RekomendasiAdapter (
+class RekomendasiAdapter(
     private val itemClicklistener: OnItemClickListener
-): ListAdapter<RecommendedRempahItem, RekomendasiAdapter.MyViewHolder>(DIFF_CALLBACK) {
+) : ListAdapter<RecommendedRempahItem, RekomendasiAdapter.MyViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding = ItemRempahBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -33,7 +32,12 @@ class RekomendasiAdapter (
                     .load(rekomendasiRempah.image)
                     .into(ivRempah)
                 root.setOnClickListener {
-                    rekomendasiRempah.idRempah.let { it1 -> itemClicklistener.onStoryClicked(it1.toString(), "rempah") }
+                    rekomendasiRempah.idRempah.let { it1 ->
+                        itemClicklistener.onStoryClicked(
+                            it1.toString(),
+                            "rempah"
+                        )
+                    }
                 }
             }
         }
@@ -45,7 +49,10 @@ class RekomendasiAdapter (
 
     companion object {
         val DIFF_CALLBACK = object : DiffUtil.ItemCallback<RecommendedRempahItem>() {
-            override fun areItemsTheSame(oldItem: RecommendedRempahItem, newItem: RecommendedRempahItem): Boolean {
+            override fun areItemsTheSame(
+                oldItem: RecommendedRempahItem,
+                newItem: RecommendedRempahItem
+            ): Boolean {
                 return oldItem.idRempah == newItem.idRempah
             }
 

@@ -1,9 +1,6 @@
 package com.dicoding.nav_capstone.ui.scan
 
-import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.dicoding.nav_capstone.data.local.database.FavoriteRempah
 import com.dicoding.nav_capstone.data.repository.RempahRepository
 import java.io.File
 

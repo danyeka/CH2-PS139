@@ -7,16 +7,12 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dicoding.nav_capstone.R
-import com.dicoding.nav_capstone.data.remote.response.ArticleListItem
 import com.dicoding.nav_capstone.data.remote.response.ResepTerkaitItem
-import com.dicoding.nav_capstone.databinding.ActivityDetailBinding
-import com.dicoding.nav_capstone.databinding.ActivityResepBinding
-import com.dicoding.nav_capstone.databinding.ItemArtikelBinding
 import com.dicoding.nav_capstone.databinding.ItemResepBinding
 
 class ResepAdapter(
     private val itemClicklistener: OnItemClickListener
-): ListAdapter<ResepTerkaitItem, ResepAdapter.MyViewHolder>(DIFF_CALLBACK) {
+) : ListAdapter<ResepTerkaitItem, ResepAdapter.MyViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding = ItemResepBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -36,8 +32,8 @@ class ResepAdapter(
                 tvRempahTerkait.text = "${resep.relatedKeyword}"
                 Glide.with(itemView)
                     .load(resep.image)
-                    .placeholder(R.drawable.load_gambar) // placeholder gambar sementara
-                    .error(R.drawable.error_gambar)
+                    .placeholder(R.drawable.load_gambar)
+                    .error(R.drawable.load_gambar)
                     .into(ivResep)
                 root.setOnClickListener {
                     resep.idResep.let { it1 -> itemClicklistener.onStoryClicked(it1) }

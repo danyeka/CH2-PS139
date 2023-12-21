@@ -22,10 +22,6 @@ import com.dicoding.nav_capstone.data.repository.ResultState
 import com.dicoding.nav_capstone.databinding.FragmentScanBinding
 import com.dicoding.nav_capstone.ui.ViewModelFactory
 import com.dicoding.nav_capstone.ui.detail.DetailActivity
-import com.dicoding.nav_capstone.ui.home.HomeViewModel
-import com.dicoding.nav_capstone.ui.scan.CameraActivity
-import com.dicoding.nav_capstone.ui.scan.CameraActivity.Companion.CAMERAX_RESULT
-import com.dicoding.nav_capstone.ui.scan.getImageUri
 
 class ScanFragment : Fragment() {
 
@@ -35,8 +31,6 @@ class ScanFragment : Fragment() {
 
     private var _binding: FragmentScanBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
     private var currentImageUri: Uri? = null
 
@@ -46,7 +40,8 @@ class ScanFragment : Fragment() {
     private lateinit var launcherIntentCameraX: ActivityResultLauncher<Intent>
 
     private fun allPermissionsGranted() =
-        ContextCompat.checkSelfPermission(requireContext(),
+        ContextCompat.checkSelfPermission(
+            requireContext(),
             REQUIRED_PERMISSION
         ) == PackageManager.PERMISSION_GRANTED
 
@@ -55,9 +50,6 @@ class ScanFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-//        val scanViewModel =
-//            ViewModelProvider(this).get(ScanViewModel::class.java)
-
         _binding = FragmentScanBinding.inflate(inflater, container, false)
         val root: View = binding.root
         return root
@@ -70,9 +62,11 @@ class ScanFragment : Fragment() {
             ActivityResultContracts.RequestPermission()
         ) { isGranted: Boolean ->
             if (isGranted) {
-                Toast.makeText(requireContext(), "Permission request granted", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Permission request granted", Toast.LENGTH_LONG)
+                    .show()
             } else {
-                Toast.makeText(requireContext(), "Permission request denied", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Permission request denied", Toast.LENGTH_LONG)
+                    .show()
             }
         }
 
@@ -95,45 +89,25 @@ class ScanFragment : Fragment() {
             }
         }
 
-        launcherIntentCameraX = registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()
-        ) {
-            if (it.resultCode == CAMERAX_RESULT) {
-                currentImageUri = it.data?.getStringExtra(CameraActivity.EXTRA_CAMERAX_IMAGE)?.toUri()
-                showImage()
-            }
-        }
-
         if (!allPermissionsGranted()) {
-            //request permission
             requestPermissionLauncher.launch(REQUIRED_PERMISSION)
         }
         binding.galleryButton.setOnClickListener { startGallery() }
         binding.cameraButton.setOnClickListener { startCamera() }
-//        binding.cameraXButton.setOnClickListener { startCameraX() }
-        binding.uploadButton.setOnClickListener { uploadImage() }
+        binding.scanButton.setOnClickListener { scanImage() }
 
     }
 
-
     private fun startGallery() {
         launcherGallery.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
-//        Toast.makeText(requireContext(), "Fitur ini belum tersedia", Toast.LENGTH_SHORT).show()
     }
 
     private fun startCamera() {
         currentImageUri = getImageUri(requireContext())
         launcherIntentCamera.launch(currentImageUri)
-//        Toast.makeText(requireContext(), "Fitur ini belum tersedia", Toast.LENGTH_SHORT).show()
     }
 
-    private fun startCameraX() {
-        val intent = Intent(requireContext(), CameraActivity::class.java)
-        launcherIntentCameraX.launch(intent)
-//        Toast.makeText(requireContext(), "Fitur ini belum tersedia", Toast.LENGTH_SHORT).show()
-    }
-
-    private fun uploadImage() {
+    private fun scanImage() {
         currentImageUri?.let { uri ->
             val imageFile = uriToFile(uri, requireContext()).reduceFileImage()
             Log.d("Image File", "showImage: ${imageFile.path}")
@@ -144,6 +118,7 @@ class ScanFragment : Fragment() {
                         is ResultState.Loading -> {
                             showLoading(true)
                         }
+
                         is ResultState.Success -> {
                             showToast(result.data.message)
                             showLoading(false)
@@ -155,7 +130,8 @@ class ScanFragment : Fragment() {
                             binding.selengkapnya.setOnClickListener {
                                 val scannedItemId = viewModel.getScannedItemId()
                                 if (scannedItemId != null) {
-                                    val intent = Intent(requireContext(), DetailActivity::class.java)
+                                    val intent =
+                                        Intent(requireContext(), DetailActivity::class.java)
                                     intent.putExtra("extra_id", scannedItemId)
                                     startActivity(intent)
                                 } else {
@@ -172,7 +148,7 @@ class ScanFragment : Fragment() {
                 }
             }
         } ?: showToast(getString(R.string.empty_image_warning))
-//        Toast.makeText(requireContext(), "Fitur ini belum tersedia", Toast.LENGTH_SHORT).show()
+
     }
 
     private fun showImage() {

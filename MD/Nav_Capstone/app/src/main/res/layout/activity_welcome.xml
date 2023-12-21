@@ -9,22 +9,20 @@
     android:scaleType="centerCrop"
     tools:context=".ui.welcome.WelcomeActivity">
 
-    <!-- Elemen latar belakang gelap -->
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0.1"
         android:background="@drawable/rempah" />
 
-    <!-- Item kotak -->
     <androidx.cardview.widget.CardView
+        style="@style/CardViewStyle"
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:layout_marginHorizontal="40dp"
         android:layout_marginBottom="40dp"
         android:elevation="4dp"
         app:cardCornerRadius="20dp"
-        style="@style/CardViewStyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -65,6 +63,7 @@
             <!-- Button kiri -->
             <Button
                 android:id="@+id/buttonMasuk"
+                style="@style/Widget.Material3.Button.OutlinedButton"
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -73,8 +72,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/buttonDaftar"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textDescription"
-                style="@style/Widget.Material3.Button.OutlinedButton"/>
+                app:layout_constraintTop_toBottomOf="@id/textDescription" />
 
             <!-- Button kanan -->
             <Button
