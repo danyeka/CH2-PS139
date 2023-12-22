@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ![](Media/Logo/logo_for_github.png)
 =======
 ![](Media/green_logo.png)
@@ -81,8 +80,3 @@ After successfully downloading the app via Google Drive, all you need to do is r
 
 + [Layout App](https://github.com/danyeka/CH2-PS139/tree/master/MD/Nav_Capstone) 
 + [API](https://github.com/danyeka/CH2-PS139/tree/master/CC/backend-API)
-
-
-
-
->>>>>>> 1e8a71dec9443c4ab593e6cc3803c51c941b8c27
