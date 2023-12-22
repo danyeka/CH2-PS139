@@ -31,7 +31,7 @@ Cloud Computing team responsible to make and provide several API code in accorda
 - /resep/:id = get detail resep data specific by id
 - /artikel = get all artikel data
 - /artikel/:id = get detail artikel data specific by id
-- /upload/rempah/:id = upload image -> store to gcs bucket -> get data
+- /upload/ = [POST] upload image -> store to gcs bucket -> predict data -> get data
 
 **Service in GCP :**
 - Cloud Run = for deployment 
