@@ -74,7 +74,9 @@ class ProfileFragment : Fragment() {
             setMessage("Apakah kamu yakin ingin keluar?")
             setPositiveButton("Yakin") { _, _ ->
                 viewModel.logOut()
-                startActivity(Intent(requireContext(), WelcomeActivity::class.java))
+                val intent = Intent(requireContext(), WelcomeActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
             }
             setNegativeButton("Batal") { _, _ ->
                 // Do Nothing

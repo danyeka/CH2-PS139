@@ -1,5 +1,6 @@
 package com.dicoding.nav_capstone.data.remote.retrofit
 
+import android.icu.util.TimeUnit
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -13,6 +14,9 @@ class ApiConfig {
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
             val client = OkHttpClient.Builder()
                 .addInterceptor(loggingInterceptor)
+                .connectTimeout(20L, java.util.concurrent.TimeUnit.SECONDS)
+                .readTimeout(20L, java.util.concurrent.TimeUnit.SECONDS)
+                .writeTimeout(20L, java.util.concurrent.TimeUnit.SECONDS)
                 .build()
             val retrofit = Retrofit.Builder()
                 .baseUrl("https://rempahustle-api-service-q4thdihuwa-et.a.run.app/")
