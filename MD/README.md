@@ -25,9 +25,13 @@ Some of the features we have developed involve:
 
 ## Installation or Getting Started
 
-To download the app, please visit the following Google Drive link:
+To download the app, please visit the following link:
 
-https://drive.google.com/drive/folders/1fNU9Pgn_SJapKC4qqQj1YMln_DLLnIvS?usp=sharing
+https://bit.ly/48ssDMR
+
+Or see the demo of the app, visit the following link:
+
+https://bit.ly/3RGh4Lw
 
 
 ## Usage
