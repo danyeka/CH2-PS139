@@ -31,7 +31,7 @@ https://bit.ly/48ssDMR
 
 Or see the demo of the app, visit the following link:
 
-https://bit.ly/3RGh4Lw
+https://bit.ly/3GUTs0q
 
 
 ## Usage
